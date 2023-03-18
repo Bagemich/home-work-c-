@@ -1,15 +1,20 @@
-﻿int Prompt(string msg)
+﻿int num, r = 0, sum=0, t = 0;
+Console.Write("Введите пятизначное число: ");
+num = Convert.ToInt32(Console.ReadLine());
+if(num>9999 && num<100000)
 {
-Console.WriteLine($"{msg}");
-return Convert.ToInt32(Console.ReadLine());
+for(t=num;num!=0;num=num/10);
 }
-int number = Prompt("Введите число");
-string ss = ("Это не день недели");
-string check(int number)
+r=num % 10;
+sum=sum*10+r;
 {
-if (number >= 6 && number < 9) ss = "Это выходной";
-if (number >= 1 && number < 6) ss = "Это будни";
-return ss;
+if(t==sum)
+Console.Write($"{r} палиндром.");
+else
+Console.Write($"{t} не палиндром");
 }
-Console.WriteLine(check(number));
+
+
+
+
 
